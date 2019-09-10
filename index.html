@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Simon Lau">
+  <meta name="dcterms.date" content="2019-09-11">
+  <title>Artificial Intelligence Intro</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reset.css">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style>
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="reveal.js/css/theme/moon.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Artificial Intelligence Intro</h1>
+  <p class="author">Simon Lau</p>
+  <p class="date">11 Sep 2019</p>
+</section>
+
+<section><section id="artificial-intelligence-intro" class="title-slide slide level1"><h1>Artificial Intelligence Intro</h1></section><section id="agenda" class="slide level2">
+<h2>Agenda</h2>
+<ul>
+<li>Artificial Intelligence (not covered)</li>
+<li>Machine Learning</li>
+<li>Machine Learning II</li>
+<li>Deep Learning</li>
+<li>Deep Learning II</li>
+<li>Conclusion</li>
+</ul>
+</section><section id="ai-terms" class="slide level2">
+<h2>AI terms</h2>
+<figure>
+<img data-src="https://www.mytectra.com/media/wysiwyg/Blog/deep-learning.png" alt="" /><figcaption>AI Terms</figcaption>
+</figure>
+</section><section id="another-view" class="slide level2">
+<h2>Another View</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/1850/1*QJG2nMIqWHmLp2j4c0GVuQ.png" alt="" /><figcaption>AI Terms</figcaption>
+</figure>
+</section><section id="caveat" class="slide level2">
+<h2>Caveat</h2>
+<ul>
+<li>I am no expert
+<ul>
+<li>Only went for <code class="sourceCode c"><span class="dv">1</span></code> course, no projects done</li>
+</ul></li>
+<li>Treating AI, Machine Learning, Deep Learning as black boxes
+<ul>
+<li>Tends to leads to claims which cannot be supported by the mathematics</li>
+</ul></li>
+</ul>
+</section></section>
+<section><section id="machine-learning" class="title-slide slide level1"><h1>Machine Learning</h1></section><section id="machine-learning-types" class="slide level2">
+<h2>Machine Learning Types</h2>
+<h3 id="algorithms">Algorithms</h3>
+<ul>
+<li>Supervised (comes with answer)</li>
+<li>Unsupervised (no answer)</li>
+<li>Reinforcement Learning (not covered)</li>
+</ul>
+<h3 id="results">Results</h3>
+<ul>
+<li>Regression
+<ul>
+<li>Returns a continuous numerical value: <code class="sourceCode javascript">Number</code></li>
+</ul></li>
+<li>Classification
+<ul>
+<li>Returns a label: <code class="sourceCode c"><span class="st">&quot;Cat&quot;</span>? or <span class="st">&quot;Dog&quot;</span>?</code></li>
+</ul></li>
+</ul>
+</section><section id="i-need-a-home" class="slide level2">
+<h2>I need a home</h2>
+<ul>
+<li>Block</li>
+<li>Street (Name)</li>
+<li>Storey</li>
+<li>(Floor) Area</li>
+<li>Lease (Commence Date)</li>
+<li>(Remaining) Lease</li>
+<li>(Resale) Price</li>
+<li>(Resale) Date</li>
+</ul>
+<p><a href="https://services2.hdb.gov.sg/webapp/BB33RTIS/BB33SSearchWidget" class="uri">https://services2.hdb.gov.sg/webapp/BB33RTIS/BB33SSearchWidget</a></p>
+</section><section id="resale-4-room-in-woodlands" class="slide level2">
+<h2>Resale 4 Room in Woodlands</h2>
+<table>
+<thead>
+<tr class="header">
+<th>Block</th>
+<th>Street</th>
+<th>Storey</th>
+<th>Area</th>
+<th>Lease</th>
+<th>Remaining</th>
+<th>Price</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>679</td>
+<td>Ave 6</td>
+<td>4 to 6</td>
+<td>101</td>
+<td>1998</td>
+<td>77yr 11 m</td>
+<td>385k</td>
+</tr>
+<tr class="even">
+<td>782A</td>
+<td>Cres</td>
+<td>7 to 9</td>
+<td>92</td>
+<td>2015</td>
+<td>94yr 10 m</td>
+<td>385k</td>
+</tr>
+<tr class="odd">
+<td>787E</td>
+<td>Cres</td>
+<td>7 to 9</td>
+<td>101</td>
+<td>1997</td>
+<td>77yr 2 m</td>
+<td>332k</td>
+</tr>
+<tr class="even">
+<td>620</td>
+<td>Dr 52</td>
+<td>4 to 6</td>
+<td>92</td>
+<td>1998</td>
+<td>77yr 2 m</td>
+<td>300k</td>
+</tr>
+<tr class="odd">
+<td>683A</td>
+<td>Dr 62</td>
+<td>1 to 3</td>
+<td>104</td>
+<td>2000</td>
+<td>77yr 2 m</td>
+<td>335k</td>
+</tr>
+</tbody>
+</table>
+</section><section id="which-algorithm" class="slide level2">
+<h2>Which Algorithm</h2>
+<h3 id="algorithms-type">Algorithms Type</h3>
+<ul>
+<li>Supervised</li>
+<li>Unsupervised</li>
+</ul>
+<h3 id="results-type">Results Type</h3>
+<ul>
+<li>Regression</li>
+<li>Classification</li>
+</ul>
+</section><section id="features" class="slide level2">
+<h2>Features</h2>
+<ul>
+<li>We call each column a <strong>feature</strong>
+<ul>
+<li>Block</li>
+<li>Street (Name)</li>
+<li>Storey</li>
+<li>(Floor) Area</li>
+<li>Lease (Commence Date)</li>
+<li>(Remaining) Lease</li>
+<li>(Resale) Price =&gt; this is <strong>label</strong> for numeric
+<ul>
+<li>Regression Supervised learning</li>
+</ul></li>
+<li>(Resale) Date</li>
+</ul></li>
+</ul>
+</section><section id="model" class="slide level2">
+<h2>Model</h2>
+<p>Each Feature can be mapped to <code>A, B, C, D... etc</code> into a formula like:</p>
+<p><span class="math inline"><em>X</em><sub>1</sub> * <em>A</em> + <em>X</em><sub>2</sub> * <em>B</em> + <em>X</em><sub>3</sub> * <em>C</em> + .... = <em>P</em><em>r</em><em>i</em><em>c</em><em>e</em></span></p>
+<p>so this <strong>model</strong> becomes</p>
+<p>X<sub>1</sub> * <code class="sourceCode c"><span class="dv">679</span></code> + X<sub>2</sub> * <code class="sourceCode c"><span class="st">&quot;Ave 6&quot;</span></code> + X<sub>3</sub> * <code class="sourceCode c"><span class="st">&quot;4 to 6&quot;</span></code> + X<sub>4</sub> * <code class="sourceCode c"><span class="dv">101</span></code> + X<sub>5</sub> * <code class="sourceCode c"><span class="dv">1998</span></code> + X<sub>6</sub> * <code class="sourceCode c"><span class="st">&quot;77yr 11 m&quot;</span></code> = <code class="sourceCode c"><span class="dv">385</span></code>k</p>
+<p>X<sub>1</sub>, X<sub>2</sub>, X<sub>3</sub> etc are called <strong>weights</strong></p>
+</section><section id="data-transformation-i" class="slide level2">
+<h2>Data Transformation I</h2>
+<p>X<sub>6</sub> * <code class="sourceCode c"><span class="st">&quot;77yr 11 m&quot;</span></code></p>
+<p>makes no sense in the formula</p>
+<p>We can change it from mixed to just months</p>
+<p><code class="sourceCode c"><span class="dv">77</span> * <span class="dv">12</span> + <span class="dv">11</span> = <span class="dv">947</span></code> so we get X<sub>6</sub> * <code class="sourceCode c"><span class="dv">947</span></code></p>
+<p>What about X<sub>2</sub> * <code class="sourceCode c"><span class="st">&quot;Ave 6&quot;</span></code>?</p>
+</section><section id="data-transformation-ii" class="slide level2">
+<h2>Data Transformation II</h2>
+<p>X<sub>2</sub> * <code class="sourceCode c"><span class="st">&quot;Ave 6&quot;</span></code></p>
+<p>makes no sense in the formula</p>
+<p>We can combine:</p>
+<ul>
+<li>Block</li>
+<li>Street (Name)</li>
+</ul>
+<p>To give Postal Code <code class="sourceCode c"><span class="dv">730679</span></code> so we get X<sub>2</sub> * <code class="sourceCode c"><span class="dv">730679</span></code></p>
+<p>Is there anything <em>wrong</em> with this approach?</p>
+</section><section id="training-the-model" class="slide level2">
+<h2>Training the model</h2>
+<p>X<sub>1</sub> * <code class="sourceCode c"><span class="dv">730679</span></code> + X<sub>3</sub> * <code class="sourceCode c"><span class="dv">4</span></code> + X<sub>4</sub> * <code class="sourceCode c"><span class="dv">101</span></code> + X<sub>5</sub> * <code class="sourceCode c"><span class="dv">1998</span></code> + X<sub>6</sub> * <code class="sourceCode c"><span class="dv">947</span></code> = <code class="sourceCode c"><span class="dv">385</span></code>k</p>
+<ul>
+<li>For training we are trying to identify the <em>weights</em> X<sub>1</sub>, X<sub>2</sub> … etc</li>
+<li>For that to work, we feed the data in and adjust the <em>weights</em> until they are stable and normalised (usually between <code class="sourceCode c"><span class="dv">0</span> and <span class="dv">1</span></code>)</li>
+</ul>
+</section><section id="model-weights" class="slide level2">
+<h2>Model Weights</h2>
+<p>X<sub>1</sub> * <code class="sourceCode c"><span class="dv">730679</span></code> + X<sub>3</sub> * <code class="sourceCode c"><span class="dv">4</span></code> + X<sub>4</sub> * <code class="sourceCode c"><span class="dv">101</span></code> + X<sub>5</sub> * <code class="sourceCode c"><span class="dv">1998</span></code> + X<sub>6</sub> * <code class="sourceCode c"><span class="dv">947</span></code> = <code class="sourceCode c"><span class="dv">385</span></code>k</p>
+<ul>
+<li>Using numbers like <code class="sourceCode c"><span class="dv">730679</span></code> means that
+<ul>
+<li><code class="sourceCode c"><span class="dv">365339</span></code> is about <strong>half</strong> of <code class="sourceCode c"><span class="dv">730679</span></code></li>
+</ul></li>
+<li>These represent postal codes
+<ul>
+<li>so they should be Categorical <em>feature</em> where there is no ordering
+<ul>
+<li>Think like colours (Red, Green, Blue etc)</li>
+</ul></li>
+</ul></li>
+</ul>
+</section><section id="data-cleaning" class="slide level2">
+<h2>Data Cleaning</h2>
+<ul>
+<li><code class="sourceCode javascript"><span class="kw">NaN</span></code> values</li>
+<li>Missing values</li>
+<li>Standardisation (<code class="sourceCode java"><span class="bu">String</span></code>: upper, lower or mixed)</li>
+</ul>
+</section><section id="storey-vs-price" class="slide level2">
+<h2>Storey vs Price</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/1200/0*szXvH1a4ZQytyqhg.png" style="width:70.0%;height:70.0%" alt="" /><figcaption>Scatter Plot</figcaption>
+</figure>
+</section><section id="loss-function" class="slide level2">
+<h2>Loss Function</h2>
+<figure>
+<img data-src="https://cdn-media-1.freecodecamp.org/images/MNskFmGPKuQfMLdmpkT-X7-8w2cJXulP3683" style="width:50.0%;height:50.0%" alt="" /><figcaption>Mean Square Error</figcaption>
+</figure>
+</section><section id="multi-dimensional-equation" class="slide level2">
+<h2>Multi dimensional Equation</h2>
+<figure>
+<img data-src="https://cdn-media-1.freecodecamp.org/images/hmZydSW9YegiMVPWq2JBpOpai3CejzQpGkNG" alt="" /><figcaption>Equation</figcaption>
+</figure>
+</section><section id="multi-dimensional-loss-function" class="slide level2">
+<h2>Multi dimensional Loss Function</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/1200/0*ZaEKARNxNgB7-H3F." style="width:70.0%;height:70.0%" alt="" /><figcaption>3D plot</figcaption>
+</figure>
+</section><section id="gradient-descent" class="slide level2">
+<h2>Gradient Descent</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/600/1*iNPHcCxIvcm7RwkRaMTx1g.jpeg" alt="" /><figcaption>Looking for the minimum of the formula</figcaption>
+</figure>
+</section><section id="convex-vs-non-convex-function" class="slide level2">
+<h2>Convex vs Non-convex Function</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/463/0*GrBkYv2vodl_swFI.png" alt="" /><figcaption>Local vs GLobal Minimal</figcaption>
+</figure>
+</section><section id="learning-rate" class="slide level2">
+<h2>Learning Rate</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/1600/1*hGhRddOUV8h0pdQek8T35A.png" alt="" /><figcaption>Big vs Small</figcaption>
+</figure>
+</section><section id="underfitting-overfitting" class="slide level2">
+<h2>Underfitting, Overfitting</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/768/1*H7kHsf5oZy_KepJHTD6hMQ.png" alt="" /><figcaption>Data</figcaption>
+</figure>
+</section><section id="overfitting" class="slide level2">
+<h2>Overfitting</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/778/1*ffYTFTzj_00JDciD9KV19Q.png" alt="" /><figcaption>Data</figcaption>
+</figure>
+</section><section id="underfitting" class="slide level2">
+<h2>Underfitting</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/782/1*Gl5dciQc0H72vnZr5vIGqA.png" alt="" /><figcaption>Data</figcaption>
+</figure>
+</section><section id="feature-engineering-i" class="slide level2">
+<h2>Feature Engineering I</h2>
+<p>What <em>feature</em> can we add to this?</p>
+<table>
+<thead>
+<tr class="header">
+<th>Block</th>
+<th>Street</th>
+<th>Storey</th>
+<th>Area</th>
+<th>Lease</th>
+<th>Remaining</th>
+<th>Price</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>679</td>
+<td>Ave 6</td>
+<td>4 to 6</td>
+<td>101</td>
+<td>1998</td>
+<td>77yr 11 m</td>
+<td>385k</td>
+</tr>
+<tr class="even">
+<td>782A</td>
+<td>Cres</td>
+<td>7 to 9</td>
+<td>92</td>
+<td>2015</td>
+<td>94yr 10 m</td>
+<td>385k</td>
+</tr>
+<tr class="odd">
+<td>787E</td>
+<td>Cres</td>
+<td>7 to 9</td>
+<td>101</td>
+<td>1997</td>
+<td>77yr 2 m</td>
+<td>332k</td>
+</tr>
+<tr class="even">
+<td>620</td>
+<td>Dr 52</td>
+<td>4 to 6</td>
+<td>92</td>
+<td>1998</td>
+<td>77yr 2 m</td>
+<td>300k</td>
+</tr>
+<tr class="odd">
+<td>683A</td>
+<td>Dr 62</td>
+<td>1 to 3</td>
+<td>104</td>
+<td>2000</td>
+<td>77yr 2 m</td>
+<td>335k</td>
+</tr>
+</tbody>
+</table>
+</section><section id="feature-engineering-ii" class="slide level2">
+<h2>Feature Engineering II</h2>
+<ul>
+<li>Distance to MRT and school</li>
+<li>High, Mid or Low Storey</li>
+</ul>
+</section><section id="feature-engineering-iii" class="slide level2">
+<h2>Feature Engineering III</h2>
+<ul>
+<li>Distance to MRT and school
+<ul>
+<li>Convert Block and Street to (lat, lng)</li>
+<li>Then calculate the distance</li>
+</ul></li>
+<li>High, Mid or Low Storey
+<ul>
+<li>Need to know how high is the original block</li>
+<li>Then decide</li>
+</ul></li>
+</ul>
+</section></section>
+<section><section id="machine-learning-ii" class="title-slide slide level1"><h1>Machine Learning II</h1></section><section id="classification-types" class="slide level2">
+<h2>Classification Types</h2>
+<ul>
+<li>Binary Classification</li>
+<li>Multi Class Classification</li>
+</ul>
+<figure>
+<img data-src="https://miro.medium.com/max/561/1*G6Rc1ytFxr11rZxXZKiOZg.png" alt="" /><figcaption>Can we use Regression for Binary Classification?</figcaption>
+</figure>
+</section><section id="not-useful" class="slide level2">
+<h2>Not useful</h2>
+<ul>
+<li>For Binary Classification
+<ul>
+<li>Results must be either <code class="sourceCode c"><span class="dv">0</span> or <span class="dv">1</span></code></li>
+<li>Regression might give <code class="sourceCode c">results &gt; <span class="dv">1</span></code> or <code class="sourceCode c">&lt; <span class="dv">0</span></code></li>
+</ul></li>
+<li>So we use Sigmod function</li>
+</ul>
+<figure>
+<img data-src="https://miro.medium.com/max/485/1*Xu7B5y9gp0iL5ooBj7LtWw.png" alt="" /><figcaption>Sigmod</figcaption>
+</figure>
+</section><section id="support-vector-machines-svm" class="slide level2">
+<h2>Support Vector Machines (SVM)</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/989/0*8iRUPIB6XjkOSihP." alt="" /><figcaption>Split this</figcaption>
+</figure>
+</section><section id="svm-split-i" class="slide level2">
+<h2>SVM Split I</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/989/0*uqvkhDvtLXy9lZG6." alt="" /><figcaption>Bad line</figcaption>
+</figure>
+</section><section id="svm-split-ii" class="slide level2">
+<h2>SVM Split II</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/989/0*_J_T8BQq8g46GJ6n." alt="" /><figcaption>Good line</figcaption>
+</figure>
+</section><section id="higher-dimensions" class="slide level2">
+<h2>Higher Dimensions</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/1592/0*ln9m5l2YUAe57R_T.png" alt="" /><figcaption>Things look better in 3D</figcaption>
+</figure>
+</section><section id="svm-plane" class="slide level2">
+<h2>SVM Plane</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/1566/0*SYE5OjcSFe1MWdQC.png" alt="" /><figcaption>Draw the hyperplane</figcaption>
+</figure>
+</section><section id="k-nearest-neighbour-knn" class="slide level2">
+<h2>K Nearest Neighbour (KNN)</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/440/0*chgrJFN_Y5S0QksO." alt="" /><figcaption>No parametric formula</figcaption>
+</figure>
+</section><section id="knn-nearest" class="slide level2">
+<h2>KNN nearest</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/400/0*M00nbLfTUSsmSoEM." alt="" /><figcaption>Which line to use?</figcaption>
+</figure>
+</section><section id="decision-tree" class="slide level2">
+<h2>Decision Tree</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/965/0*pZ0pgQT3i-CFPyaf." alt="" /><figcaption>Titanic Survival</figcaption>
+</figure>
+</section><section id="random-forest" class="slide level2">
+<h2>Random Forest</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/592/1*i0o8mjFfCn-uD79-F1Cqkw.png" alt="" /><figcaption>Ensemble learning</figcaption>
+</figure>
+</section><section id="imbalanced-dataset" class="slide level2">
+<h2>Imbalanced dataset</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/725/0*49LgGsY4l09sNwcR.png" alt="" /><figcaption>Undersampling vs Oversampling</figcaption>
+</figure>
+</section></section>
+<section><section id="deep-learning-i" class="title-slide slide level1"><h1>Deep Learning I</h1></section><section id="deep-learning-types" class="slide level2">
+<h2>Deep Learning Types</h2>
+<ul>
+<li>Computer Vision (Pictures)</li>
+<li>Natural Language Processing (NLP - words) - Not covered</li>
+<li>Speech - not covered</li>
+</ul>
+</section><section id="machine-learning-model-i" class="slide level2">
+<h2>Machine Learning Model I</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/883/1*LlTIwE6h0l1Aoln2GlAGcw.png" style="width:70.0%;height:70.0%" alt="" /><figcaption>Housing again</figcaption>
+</figure>
+</section><section id="machine-learning-model-ii" class="slide level2">
+<h2>Machine Learning Model II</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/1485/1*hOemQF_v42KHlMyiqcQNyQ.png" style="width:60.0%;height:60.0%" alt="" /><figcaption>More than 1 sets of weights</figcaption>
+</figure>
+</section><section id="machine-learning-model-iii" class="slide level2">
+<h2>Machine Learning Model III</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/777/1*VeS0ziSjogCQThPYZh0TIQ.png" style="width:50.0%;height:50.0%" alt="" /><figcaption>Final Estimate</figcaption>
+</figure>
+</section><section id="neuron" class="slide level2">
+<h2>Neuron</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/895/1*Lt8RZaeQ6f6B_eA1oD32JQ.png" style="width:60.0%;height:60.0%" alt="" /><figcaption>Full view</figcaption>
+</figure>
+</section><section id="biology" class="slide level2">
+<h2>Biology</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/1890/1*0UxcK0BoePVAeIdzeqEhzQ.png" alt="" /><figcaption>Biology vs artifical</figcaption>
+</figure>
+</section><section id="neural-network" class="slide level2">
+<h2>Neural Network</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/690/1*dnvGC-PORSoCo7VXT3PV_A.png" alt="" /><figcaption>Simple vs Deep</figcaption>
+</figure>
+</section><section id="how-to-process-images" class="slide level2">
+<h2>How to process images</h2>
+<ul>
+<li>Images made up of pixels matrix</li>
+<li>Each pixel is (Red, Green, Blue)</li>
+</ul>
+<figure>
+<img data-src="https://cdn.pixabay.com/photo/2019/05/16/23/17/cat-4208584_960_720.jpg" width="72" height="96" alt="" /><figcaption>Cat</figcaption>
+</figure>
+<p><code class="sourceCode c">=&gt; [(<span class="dv">123</span>, <span class="dv">213</span>, <span class="dv">87</span>), (<span class="dv">223</span>, <span class="dv">113</span>, <span class="dv">187</span>)... ]</code></p>
+</section><section id="too-much-info-in-images" class="slide level2">
+<h2>Too much info in images</h2>
+<figure>
+<img data-src="https://cdn.pixabay.com/photo/2019/05/16/23/17/cat-4208584_960_720.jpg" width="72" height="96" alt="" /><figcaption>height=96 width=72</figcaption>
+</figure>
+<p><code class="sourceCode c"><span class="dv">92</span> (Height) x <span class="dv">72</span> (Width) x <span class="dv">3</span> (Colours) = <span class="dv">20</span>,<span class="dv">730</span> features</code></p>
+</section><section id="trying-to-use-templates" class="slide level2">
+<h2>Trying to use templates</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/917/1*6o4FaHE9ehj_eN5HykKjSA.png" alt="" /><figcaption>Averaging photos doesn’t work</figcaption>
+</figure>
+</section><section id="identifying-number-8" class="slide level2">
+<h2>Identifying number 8</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/977/1*b31hqXiBUjIXo2HSn_grFw.png" style="width:70.0%;height:70.0%" alt="" /><figcaption>Overview</figcaption>
+</figure>
+</section><section id="tunnel-vision" class="slide level2">
+<h2>Tunnel Vision</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/1202/1*5ciREAL7xdyXcD-cSRP7Jw.png" alt="" /><figcaption>Above Works</figcaption>
+</figure>
+<figure>
+<img data-src="https://miro.medium.com/max/1185/1*b5jMTAiyVhOIB9hheXhMmA.png" alt="" /><figcaption>Above Fail</figcaption>
+</figure>
+</section><section id="sliding-window" class="slide level2">
+<h2>Sliding window</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/950/1*bGBijVuJnTRj8025et0mcQ.gif" alt="" /><figcaption>Left to right, top to bottom</figcaption>
+</figure>
+</section><section id="more-training-data" class="slide level2">
+<h2>More Training Data</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/1085/1*biD9eS5eB6zXzieonNk-VQ.png" alt="" /><figcaption>Image Augmentation</figcaption>
+</figure>
+</section><section id="deeper-neural-network" class="slide level2">
+<h2>Deeper Neural Network</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/2256/1*wfmpsoFqWKC7VadjTJxwnQ.png" alt="" /><figcaption>More complex</figcaption>
+</figure>
+</section><section id="child-image" class="slide level2">
+<h2>Child Image</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/5146/1*v_06o9d5u4k2lp9cTHQUtg.jpeg" style="width:70.0%;height:70.0%" alt="" /><figcaption>No Context</figcaption>
+</figure>
+</section><section id="humans-can-tell" class="slide level2">
+<h2>Humans can tell</h2>
+<ul>
+<li>The ground is covered in grass and concrete</li>
+<li>There is a child</li>
+<li>The child is sitting on a bouncy horse</li>
+<li>The bouncy horse is on top of the grass</li>
+</ul>
+</section><section id="break-the-image-up" class="slide level2">
+<h2>Break the image up</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/4585/1*xS7EugfgQHk68iph7GHpQg.png" style="width:70.0%;height:70.0%" alt="" /><figcaption>Split</figcaption>
+</figure>
+</section><section id="feed-1-part" class="slide level2">
+<h2>Feed 1 part</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/758/1*84-TdHvtAHkfnzwa1ZsTVg.png" alt="" /><figcaption>Identify 1 part</figcaption>
+</figure>
+</section><section id="save-result" class="slide level2">
+<h2>Save result</h2>
+<p><img data-src="https://miro.medium.com/max/893/1*tpMqyjAFgsYWpvlNkZgFfw.png" style="width:50.0%;height:50.0%" /></p>
+</section><section id="downsampling" class="slide level2">
+<h2>Downsampling</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/1047/1*1WWTbW9yyEJ69TF1rsPv4g.png" alt="" /><figcaption>Reduce image to simpler matrix</figcaption>
+</figure>
+</section><section id="max-pooling" class="slide level2">
+<h2>Max Pooling</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/887/1*xOAroFiw9X0WSkCwgcIO6Q.png" alt="" /><figcaption>Pick the highest value</figcaption>
+</figure>
+</section><section id="complete-pipeline" class="slide level2">
+<h2>Complete pipeline</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/1589/1*tJ1Rkl5xw_5izEZXmNfh5Q.png" alt="" /><figcaption>CNN</figcaption>
+</figure>
+</section></section>
+<section><section id="deep-learning-ii" class="title-slide slide level1"><h1>Deep Learning II</h1></section><section id="different-people" class="slide level2">
+<h2>2 different people</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/1920/1*l7zNW_4-afEOfP_mXxs75w.jpeg" style="width:70.0%;height:70.0%" alt="" /><figcaption>Will Ferrell vs Chad Smith</figcaption>
+</figure>
+</section><section id="humans-are-good-at-this" class="slide level2">
+<h2>Humans are good at this</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/580/1*HcwWLND2du14e-rzJ50tHA.jpeg" alt="" /><figcaption>Can you see a face?</figcaption>
+</figure>
+</section><section id="steps-in-complex-algo" class="slide level2">
+<h2>Steps in complex algo</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/1000/1*WxBM1lB5WzDjrDXYfi9gtw.gif" alt="" /><figcaption>Let’s walk through</figcaption>
+</figure>
+</section><section id="change-to-black-and-white" class="slide level2">
+<h2>Change to Black and White</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/511/1*osGdB2BNMThhk1rTwo07JA.jpeg" style="width:30.0%;height:30.0%" alt="" /><figcaption>Why Black and White?</figcaption>
+</figure>
+</section><section id="histogram-of-oriented-gradients-i" class="slide level2">
+<h2>Histogram of Oriented Gradients I</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/800/1*RZS05e_5XXQdofdRx1GvPA.gif" alt="" /><figcaption>Look at each pixel and those surrounding it</figcaption>
+</figure>
+</section><section id="histogram-of-oriented-gradients-ii" class="slide level2">
+<h2>Histogram of Oriented Gradients II</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/500/1*WF54tQnH1Hgpoqk-Vtf9Lg.gif" alt="" /><figcaption>Draw an arrow towards the darkest pixel</figcaption>
+</figure>
+</section><section id="histogram-of-oriented-gradients-iii" class="slide level2">
+<h2>Histogram of Oriented Gradients III</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/1000/1*oTdaElx_M-_z9c_iAwwqcw.gif" alt="" /><figcaption>Gradients, show the flow from light to dark</figcaption>
+</figure>
+<p>Why do this?</p>
+</section><section id="histogram-of-oriented-gradients-iv" class="slide level2">
+<h2>Histogram of Oriented Gradients IV</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/800/1*uHisafuUw0FOsoZA992Jdg.gif" alt="" /><figcaption>Max pool 16 x 16 instead of 1 x 1</figcaption>
+</figure>
+<p>Normalise the image irregardless of lighting conditions</p>
+</section><section id="histogram-of-oriented-gradients-v" class="slide level2">
+<h2>Histogram of Oriented Gradients V</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/1162/1*6xgev0r-qn4oR88FrW6fiA.png" style="width:70.0%;height:70.0%" alt="" /><figcaption>Match Pattern</figcaption>
+</figure>
+</section><section id="histogram-of-oriented-gradients-vi" class="slide level2">
+<h2>Histogram of Oriented Gradients VI</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/1200/1*dOtP6yl7d4c0oaR6NpfWVg.jpeg" style="width:70.0%;height:70.0%" alt="" /><figcaption>We can find faces</figcaption>
+</figure>
+</section><section id="same-person-different-pose" class="slide level2">
+<h2>Same person Different Pose</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/956/1*x-rg0aSpKOer1JF-TejYUg.png" alt="" /><figcaption>What do we do in this case?</figcaption>
+</figure>
+</section><section id="landmarks" class="slide level2">
+<h2>Landmarks</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/414/1*AbEg31EgkbXSQehuNJBlWg.png" alt="" /><figcaption>68 specific points Face Landmark Estimation</figcaption>
+</figure>
+<p><a href="http://www.csc.kth.se/~vahidk/papers/KazemiCVPR14.pdf" class="uri">http://www.csc.kth.se/~vahidk/papers/KazemiCVPR14.pdf</a></p>
+</section><section id="transform-using-landmarks" class="slide level2">
+<h2>Transform using landmarks</h2>
+<p><img data-src="https://miro.medium.com/max/1908/1*igEzGcFn-tjZb94j15tCNA.png" /></p>
+</section><section id="telling-faces-apart" class="slide level2">
+<h2>Telling Faces apart</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/720/1*_GNyjR3JlPoS9grtIVmKFQ.gif" style="width:60.0%;height:60.0%" alt="" /><figcaption>Just bad TV</figcaption>
+</figure>
+</section><section id="training-deep-cnn" class="slide level2">
+<h2>Training Deep CNN</h2>
+<p><img data-src="https://miro.medium.com/max/1035/1*n1R8VMyDRw3RNO3JULYBpQ.png" style="width:60.0%;height:60.0%" /></p>
+</section><section id="embedding" class="slide level2">
+<h2>Embedding</h2>
+<ul>
+<li><code class="sourceCode c"><span class="dv">128</span></code> measurements of each face =&gt; embedding
+<ul>
+<li>Invented in 2015 by researchers at Google but many similar approaches exist</li>
+</ul></li>
+<li>Training a CNN to output face embeddings with a GPU
+<ul>
+<li>Takes about <code class="sourceCode c"><span class="dv">24</span> hours</code> of continuous training to get good accuracy</li>
+</ul></li>
+</ul>
+</section><section id="sample-embedding" class="slide level2">
+<h2>Sample Embedding</h2>
+<p><img data-src="https://miro.medium.com/max/1627/1*6kMMqLt4UBCrN7HtqNHMKw.png" /></p>
+</section></section>
+<section><section id="conclusion" class="title-slide slide level1"><h1>Conclusion</h1></section><section id="imagine-an-auction-site" class="slide level2">
+<h2>Imagine an auction site</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/761/1*hOX0ejsh_0Bvk9FxZZ1c8Q.png" alt="" /><figcaption>Some valid items, some not</figcaption>
+</figure>
+</section><section id="what-we-expect" class="slide level2">
+<h2>What we expect</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/1071/1*m-QfVLt3TZuczJxNAuXxOg.png" style="width:70.0%;height:70.0%" alt="" /><figcaption>A little off reduces the accuracy</figcaption>
+</figure>
+</section><section id="can-we-fool-the-ai" class="slide level2">
+<h2>Can we fool the AI</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/1215/1*6bUcVNpYPtZ5Nj-QDLSb6w.png" alt="" /><figcaption>What do you think?</figcaption>
+</figure>
+</section><section id="which-algorithm-ii" class="slide level2">
+<h2>Which Algorithm II</h2>
+<h3 id="algorithms-type-ii">Algorithms Type II</h3>
+<ul>
+<li>Supervised</li>
+<li>Unsupervised</li>
+</ul>
+<h3 id="results-type-ii">Results Type II</h3>
+<ul>
+<li>Regression</li>
+<li>Classification</li>
+</ul>
+</section><section id="classification" class="slide level2">
+<h2>Classification</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/892/1*ZbIJhQZyCj1G96rgtID_vw.png" style="width:50.0%;height:50.0%" alt="" /><figcaption>Green is ok, Red is bad</figcaption>
+</figure>
+</section><section id="a-little-nudge" class="slide level2">
+<h2>A little nudge</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/917/1*5cBIiAr0ex0mVDDI8eU1eQ.png" style="width:50.0%;height:50.0%" alt="" /><figcaption>Move the red to the green</figcaption>
+</figure>
+</section><section id="hacked-images" class="slide level2">
+<h2>Hacked Images</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/1600/1*r4LpJUjIqXPtH3r6cMsgAg.png" alt="" /><figcaption>Invisible to the human eye</figcaption>
+</figure>
+</section><section id="what-can-ai-do" class="slide level2">
+<h2>What can AI do</h2>
+<ul>
+<li>Regression</li>
+<li>Classification</li>
+</ul>
+<p>What about other problems?</p>
+</section><section id="card-monte" class="slide level2">
+<h2>3 Card Monte</h2>
+<figure>
+<img data-src="https://media0.giphy.com/media/UW9MtSTaXLXyw/200w.webp" alt="" /><figcaption>I am not sure if AI can solve this</figcaption>
+</figure>
+</section><section id="essay" class="slide level2">
+<h2>Essay</h2>
+<ul>
+<li>1<sup>st</sup> sentence from essay about
+<ul>
+<li>Addressing technology’s impact on humans’ ability to think for themselves</li>
+</ul></li>
+</ul>
+<blockquote>
+<p>“Invention for precincts has not, and presumably never will be undeniable in the extent to which we inspect the reprover.”</p>
+</blockquote>
+<p><a href="https://www.vice.com/en_us/article/pa7dj9/flawed-algorithms-are-grading-millions-of-students-essays" class="uri">https://www.vice.com/en_us/article/pa7dj9/flawed-algorithms-are-grading-millions-of-students-essays</a></p>
+</section><section id="criminal-risk-assessment-algorithms" class="slide level2">
+<h2>Criminal risk assessment algorithms</h2>
+<ul>
+<li>Take in the details of a defendant’s profile
+<ul>
+<li>Return a recidivism score
+<ul>
+<li>a single number estimating the likelihood that he or she will reoffend</li>
+</ul></li>
+</ul></li>
+<li>Whats the issue with this?</li>
+</ul>
+<p><a href="https://www.technologyreview.com/s/612775/algorithms-criminal-justice-ai" class="uri">https://www.technologyreview.com/s/612775/algorithms-criminal-justice-ai</a></p>
+</section><section id="the-end" class="slide level2">
+<h2>The end</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/267/1*wUZiI2Mg2cncuMWWXIiBgQ.png" alt="" /><figcaption>XKCD</figcaption>
+</figure>
+</section></section>
+<section><section id="others" class="title-slide slide level1"><h1>Others</h1></section><section id="text-processing" class="slide level2">
+<h2>Text Processing</h2>
+</section><section id="parsing-stemming-lemmatization" class="slide level2">
+<h2>Parsing, Stemming, Lemmatization</h2>
+<ul>
+<li>Tokenization: Split text into words</li>
+<li>Stemming: Find word stems
+<ul>
+<li>stating =&gt; state, reference =&gt; refer</li>
+</ul></li>
+<li>Lemmatization: Find base form of words</li>
+</ul>
+</section><section id="stop-words" class="slide level2">
+<h2>Stop words</h2>
+</section><section id="guess-the-next-letter" class="slide level2">
+<h2>Guess the next letter</h2>
+<blockquote>
+<p>Robert Cohn was once middleweight boxi</p>
+</blockquote>
+</section><section id="recurrent-neural-network" class="slide level2">
+<h2>Recurrent Neural Network</h2>
+<figure>
+<img data-src="https://miro.medium.com/max/860/1*dcdVATcm0yJQxr4jGG5bFA.png" alt="" /><figcaption>Past words matter</figcaption>
+</figure>
+</section><section id="speech-procesing" class="slide level2">
+<h2>Speech Procesing</h2>
+<p>Speech = Text Processing + Acoustic model</p>
+</section><section id="reinforced-learning" class="slide level2">
+<h2>Reinforced Learning</h2>
+<p><img data-src="https://miro.medium.com/max/478/1*HvoLc50Dpq1ESKuejhICHg.png" /></p>
+</section></section>
+    </div>
+  </div>
+
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
